@@ -1,0 +1,37 @@
+{
+  "137": {
+    "swapRouters": "0x111111125421cA6dc452d289314280a0f8842A65",
+    "bridgeRouters": "0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE",
+    "settlementTokens": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+  },
+  "1952": {
+    "swapRouters": "0x80B2F610Dd131BDfbceb38E8E440228F2Ca828Df",
+    "bridgeRouters": "0x80B2F610Dd131BDfbceb38E8E440228F2Ca828Df",
+    "settlementTokens": "0xcb8bf24c6ce16ad21d707c9505421a17f2bec79d"
+  },
+  "8453": {
+    "swapRouters": "0x111111125421cA6dc452d289314280a0f8842A65",
+    "bridgeRouters": "0x1231DEB6f5749EF6cE6943a275A1D3E7486F4EaE",
+    "settlementTokens": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  },
+  "10143": {
+    "swapRouters": "0x560B65bFaE59fAdb1EF346378cC9Cd2D264cE0cA",
+    "bridgeRouters": "0x560B65bFaE59fAdb1EF346378cC9Cd2D264cE0cA",
+    "settlementTokens": "0x560B65bFaE59fAdb1EF346378cC9Cd2D264cE0cA"
+  },
+  "42431": {
+    "swapRouters": "0x7986BAB5445Bc6D635365Bf905A4aB50793EE99e",
+    "bridgeRouters": "0x7986BAB5445Bc6D635365Bf905A4aB50793EE99e",
+    "settlementTokens": "0x20C0000000000000000000000000000000000000"
+  },
+  "46630": {
+    "swapRouters": "0x7986BAB5445Bc6D635365Bf905A4aB50793EE99e",
+    "bridgeRouters": "0x7986BAB5445Bc6D635365Bf905A4aB50793EE99e",
+    "settlementTokens": "0x7986BAB5445Bc6D635365Bf905A4aB50793EE99e"
+  },
+  "11155111": {
+    "swapRouters": "0xCA4511435F99dcbf3Ab7cba04C8A16721eB7b894",
+    "bridgeRouters": "0xCA4511435F99dcbf3Ab7cba04C8A16721eB7b894",
+    "settlementTokens": "0x8a1cCD415996BC2E920201f4AF044d1654BC32ea"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "11155111": {
+    "NodeRailsEscrow": "0x9f4f07e4a2aa3729c26f97c730baded7609a62d8",
+    "NodeRailsMerchantManager": "0x678bd0918699f53fffbf6a55154432275e14e1b7"
+  },
+  "8453": {
+    "NodeRailsEscrow": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86",
+    "NodeRailsMerchantManager": "0xa1c9f1ca5e665958bce9d734ada691601b781972"
+  },
+  "545": {
+    "NodeRailsEscrow": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  },
+  "314159": {
+    "NodeRailsEscrow": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  },
+  "31611": {
+    "NodeRailsMerchantManager": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86",
+    "NodeRailsEscrow": "0x5a4bc03b982a909fc1e665cf63c5e662ee74cb2a"
+  },
+  "137": {
+    "NodeRailsEscrow": "0x5a4bc03b982a909fc1e665cf63c5e662ee74cb2a",
+    "NodeRailsMerchantManager": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  },
+  "1952": {
+    "NodeRailsEscrow": "0x5a4bc03b982a909fc1e665cf63c5e662ee74cb2a",
+    "NodeRailsMerchantManager": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  },
+  "42431": {
+    "NodeRailsEscrowLogic": "0x9080212268bd2a34991a36841a538223cf81ae38",
+    "NodeRailsEscrow": "0x86efe26b441075bf77d0dd938770a1d484692372",
+    "NodeRailsMerchantManager": "0x1998d37d674ac17b55fea185c0677250b31d1d3c"
+  },
+  "46630": {
+    "NodeRailsEscrow": "0x5a4bc03b982a909fc1e665cf63c5e662ee74cb2a",
+    "NodeRailsMerchantManager": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  },
+  "10143": {
+    "NodeRailsEscrow": "0x5a4bc03b982a909fc1e665cf63c5e662ee74cb2a",
+    "NodeRailsMerchantManager": "0x2fa8ec8170e74afa89991e44e7d8c984f7867e86"
+  }
+}

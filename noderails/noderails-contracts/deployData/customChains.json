@@ -1,0 +1,30 @@
+{
+  "1952": {
+    "name": "X Layer Testnet",
+    "rpcUrl": "https://xlayertestrpc.okx.com",
+    "explorerUrl": "https://www.oklink.com/xlayer-test",
+    "nativeCurrency": "OKB",
+    "networkType": "testnets"
+  },
+  "10143": {
+    "name": "monad_testnet",
+    "rpcUrl": "https://testnet-rpc.monad.xyz",
+    "explorerUrl": "https://testnet.monadvision.com",
+    "nativeCurrency": "MON",
+    "networkType": "testnets"
+  },
+  "42431": {
+    "name": "tempo_moderato",
+    "rpcUrl": "https://rpc.moderato.tempo.xyz",
+    "explorerUrl": "https://explore.testnet.tempo.xyz",
+    "nativeCurrency": "USD",
+    "networkType": "testnets"
+  },
+  "46630": {
+    "name": "Robinhood Chain Testnet",
+    "rpcUrl": "https://robinhood-testnet.drpc.org",
+    "explorerUrl": "https://explorer.testnet.chain.robinhood.com",
+    "nativeCurrency": "ETH",
+    "networkType": "testnets"
+  }
+}
