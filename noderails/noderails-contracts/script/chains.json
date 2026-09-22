@@ -1,0 +1,104 @@
+{
+  "testnets": {
+    "sepolia": {
+      "chainId": 11155111,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=11155111&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://sepolia.etherscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "arbitrum_sepolia": {
+      "chainId": 421614,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=421614&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://sepolia.arbiscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "optimism_sepolia": {
+      "chainId": 11155420,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=11155420&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://sepolia-optimism.etherscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "base_sepolia": {
+      "chainId": 84532,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=84532&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://sepolia.basescan.org",
+      "nativeCurrency": "ETH"
+    },
+    "mezo_testnet": {
+      "chainId": 31611,
+      "rpcUrl": "https://rpc.test.mezo.org",
+      "explorerUrl": "https://explorer.test.mezo.org",
+      "nativeCurrency": "BTC",
+      "evmVersion": "london"
+    },
+    "tempo_moderato": {
+      "chainId": 42431,
+      "rpcUrl": "https://rpc.moderato.tempo.xyz",
+      "explorerUrl": "https://explore.testnet.tempo.xyz",
+      "nativeCurrency": "USD",
+      "gasLimit": 30000000,
+      "tempoFeeToken": "0x20c0000000000000000000000000000000000002",
+      "verifierUrl": "https://contracts.tempo.xyz"
+    },
+    "monad_testnet": {
+      "chainId": 10143,
+      "rpcUrl": "https://testnet-rpc.monad.xyz",
+      "explorerUrl": "https://testnet.monadvision.com",
+      "nativeCurrency": "MON"
+    }
+  },
+  "mainnets": {
+    "ethereum": {
+      "chainId": 1,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=1&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://etherscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "polygon": {
+      "chainId": 137,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=137&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://polygonscan.com",
+      "nativeCurrency": "MATIC"
+    },
+    "arbitrum": {
+      "chainId": 42161,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=42161&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://arbiscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "optimism": {
+      "chainId": 10,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=10&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://optimistic.etherscan.io",
+      "nativeCurrency": "ETH"
+    },
+    "base": {
+      "chainId": 8453,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=8453&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://basescan.org",
+      "nativeCurrency": "ETH"
+    },
+     "filecoin": {
+      "chainId": 314159,
+      "rpcUrl": "https://rpc.ankr.com/filecoin_testnet",
+      "explorerUrl": "https://filecoin.blockscout.com",
+      "nativeCurrency": "FIL",
+      "gasLimit": 20000000
+    },
+    "flow": {
+      "chainId": 545,
+      "rpcUrl": "https://rpc.leanrpc.xyz/rpc?chainId=545&apiKey=${LEANRPC_API_KEY}",
+      "explorerUrl": "https://flow.blockscout.com",
+      "nativeCurrency": "FLOW"
+    },
+    "tempo": {
+      "chainId": 4217,
+      "rpcUrl": "https://rpc.tempo.xyz",
+      "explorerUrl": "https://explore.tempo.xyz",
+      "nativeCurrency": "USD",
+      "gasLimit": 30000000,
+      "tempoFeeToken": "0x20c0000000000000000000000000000000000000",
+      "verifierUrl": "https://contracts.tempo.xyz"
+    }
+  }
+}
