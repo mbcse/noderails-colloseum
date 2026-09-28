@@ -1,0 +1,862 @@
+{
+ "guide": [
+ {
+ "text": "Getting Started with NodeRails Crypto Payments",
+ "type": "h1"
+ },
+ {
+ "text": "This document walks through how merchants can onboard to the NodeRails platform, configure apps and wallets, enable settlements, create payment links, and manage payments, subscriptions, invoices, payouts, and disputes.",
+ "type": "p"
+ },
+ {
+ "text": "Step 1: Access the Merchant Login and Create Your Account",
+ "type": "h3"
+ },
+ {
+ "text": "As a merchant, go to the NodeRails merchant login page.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "1"
+ },
+ {
+ "text": "From the login page, choose the option to sign up for a new account.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "2"
+ },
+ {
+ "text": "Enter your email address and create a secure password, then submit the form to create your account.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "3"
+ },
+ {
+ "type": "img",
+ "num": "4"
+ },
+ {
+ "text": "After clicking Create Account, complete the short verification and onboarding flow, which takes about 30 seconds.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "5"
+ },
+ {
+ "text": "Indicate whether you are signing up as an individual or a business.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "6"
+ },
+ {
+ "type": "img",
+ "num": "9"
+ },
+ {
+ "text": "Step 2: Create Your First App (Testnet or Production)",
+ "type": "h3"
+ },
+ {
+ "text": "Next, create an app that will be used to accept payments (for example, your website or product).",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "10"
+ },
+ {
+ "text": "If you are just testing the platform, create a test app in the sandbox environment. When you are ready to accept real payments, create a production app.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "11"
+ },
+ {
+ "type": "img",
+ "num": "12"
+ },
+ {
+ "text": "For this demo, select a test app and give it a name, such as \u201cMy Website.\u201d",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "13"
+ },
+ {
+ "text": "Step 3: Connect Your Wallet for Settlements",
+ "type": "h3"
+ },
+ {
+ "text": "Configure where your funds will be settled by connecting your crypto wallet.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "14"
+ },
+ {
+ "text": "You can skip this step initially, but to actually receive funds when users pay you, the settled funds must be routed directly to your wallet. Connect your wallet, authorize its use with NodeRails, and sign in to verify ownership.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "15"
+ },
+ {
+ "type": "img",
+ "num": "16"
+ },
+ {
+ "text": "Once this is done, your basic setup is finished and you are ready to use the platform. NodeRails is non-custodial, so funds settle directly to your own wallet.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "17"
+ },
+ {
+ "text": "Step 4: Explore the Organization-Level Dashboard",
+ "type": "h3"
+ },
+ {
+ "text": "Open the Overview section to view organization-level analytics and details.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "18"
+ },
+ {
+ "text": "Here you can see which tokens and networks customers are using to pay you, as well as active subscriptions across all of your apps. You can also create multiple apps - for example, one for your website, one for your mobile app, and another for tools or services - so you can accept payments across all of them.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "19"
+ },
+ {
+ "text": "You already created a test app during onboarding; you can later create a production app in the same way.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "20"
+ },
+ {
+ "text": "Step 5: Configure Bank Settlement and Global Accounts",
+ "type": "h3"
+ },
+ {
+ "text": "From the banking/settlement section, you can either connect your own bank account or start a new bank account with NodeRails.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "21"
+ },
+ {
+ "type": "img",
+ "num": "24"
+ },
+ {
+ "text": "If you prefer to settle funds directly to your bank instead of your crypto wallet, connect your bank account, provide the required information, and complete KYC/KYB verification. Once approved, you can settle funds to your bank.",
+ "type": "p"
+ },
+ {
+ "text": "If you do not have a bank account or want to receive funds in global currencies, you can open global accounts (e.g., USD, EUR, BRL, GBP) with NodeRails at a rate of $30 per year. Funds settle to these accounts, convert to stablecoins, and then to your wallet.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "25"
+ },
+ {
+ "text": "Step 6: Manage Your Organization, Team, and Tax Settings",
+ "type": "h3"
+ },
+ {
+ "text": "As an organization or individual merchant, you can add team members and define their permissions - controlling what they can monitor and access within your organization.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "26"
+ },
+ {
+ "type": "img",
+ "num": "28"
+ },
+ {
+ "text": "Similarly, configure tax rates (such as GST or VAT) based on the country in which you operate.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "29"
+ },
+ {
+ "type": "img",
+ "num": "31"
+ },
+ {
+ "text": "Step 7: Review App-Level Analytics and Core Features",
+ "type": "h3"
+ },
+ {
+ "text": "Go to the Apps section to access app-level analytics and configuration.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "32"
+ },
+ {
+ "text": "For each app, you can track metrics such as monthly revenue, disputes, refunds, active subscriptions, and total payments. You will also find tools to:",
+ "type": "p"
+ },
+ {
+ "items": [
+ "Create payment links",
+ "Create subscriptions",
+ "Generate invoices and accept invoice payments directly"
+ ],
+ "type": "ul"
+ },
+ {
+ "type": "img",
+ "num": "33"
+ },
+ {
+ "type": "img",
+ "num": "35"
+ },
+ {
+ "text": "You can manage customers: whenever someone pays you, their wallet and activity are tracked automatically so you can analyze their behavior and history.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "36"
+ },
+ {
+ "text": "You can also create product plans (e.g., $10, $20, $30 plans) tailored to your use cases.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "37"
+ },
+ {
+ "text": "Additionally, you can track checkout sessions happening on your website and access a disputes section to monitor and respond to disputes.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "38"
+ },
+ {
+ "type": "img",
+ "num": "39"
+ },
+ {
+ "text": "Step 8: Enable Networks and Tokens for Your App",
+ "type": "h3"
+ },
+ {
+ "text": "When you first create an app, you must enable the blockchain networks and tokens on which you want to accept payments.",
+ "type": "p"
+ },
+ {
+ "text": "Enable a network (for example, Ethereum Sepolia), then choose which tokens you will accept on that network.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "40"
+ },
+ {
+ "type": "img",
+ "num": "42"
+ },
+ {
+ "text": "You can enable all available tokens or selectively enable/disable them depending on your business needs.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "43"
+ },
+ {
+ "type": "img",
+ "num": "46"
+ },
+ {
+ "text": "These are app-level configurations. If you need per-payment configuration (e.g., only specific tokens or networks for a particular payment), you can do that via the NodeRails SDK. All operations visible in the dashboard are also available programmatically through the SDK.",
+ "type": "p"
+ },
+ {
+ "text": "Once your networks and tokens are configured, ensure the appropriate wallets are connected. If you are accepting payments on networks like Solana or Sui, connect those wallets as well.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "47"
+ },
+ {
+ "text": "Step 9: Configure Payouts and Settlement Rules",
+ "type": "h3"
+ },
+ {
+ "text": "If you want to use NodeRails for payouts (e.g., global salary payments or sending funds to wallets or banks worldwide in stablecoins or crypto), configure the payout functionality.",
+ "type": "p"
+ },
+ {
+ "text": "One of the key settlement features is Convert to One Token. Enable this to accept any cryptocurrency while automatically settling into a chosen stablecoin.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "48"
+ },
+ {
+ "text": "With this feature enabled, customers can pay with any supported token (e.g., Bitcoin, Ethereum), and NodeRails converts the payment to stablecoins at payment time, shielding you from crypto price volatility.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "49"
+ },
+ {
+ "type": "img",
+ "num": "51"
+ },
+ {
+ "text": "After enabling token conversion, you can also enable Settle to One Chain.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "52"
+ },
+ {
+ "type": "img",
+ "num": "55"
+ },
+ {
+ "text": "This lets you settle all funds to your wallet on a single blockchain instead of receiving them across multiple chains (such as Ethereum, Solana, Sui, or X Layer). NodeRails handles all bridging and swapping.",
+ "type": "p"
+ },
+ {
+ "text": "Choose which chain you want to settle on and which token you want to settle into.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "56"
+ },
+ {
+ "type": "img",
+ "num": "59"
+ },
+ {
+ "text": "Once selected, your settlement configuration is complete.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "60"
+ },
+ {
+ "type": "img",
+ "num": "61"
+ },
+ {
+ "text": "You can also configure payouts to bank accounts. Before using bank payouts, you must connect your bank account. For this demo, close the banking view and proceed to the Payment Links section.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "62"
+ },
+ {
+ "type": "img",
+ "num": "63"
+ },
+ {
+ "text": "Step 10: Create a Payment Link",
+ "type": "h3"
+ },
+ {
+ "text": "To create a new payment link, open the Payment Links section.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "64"
+ },
+ {
+ "text": "Name the payment link (for example, \u201cPro Payment Link for My Web App\u201d).",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "65"
+ },
+ {
+ "text": "Optionally, select an existing product plan. If you do not have product plans configured, you can simply specify the amount directly (e.g., 1 USD).",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "66"
+ },
+ {
+ "type": "img",
+ "num": "68"
+ },
+ {
+ "text": "Add a description for the payment link. You can also configure success and cancel URLs to redirect users after payment. If you have set up tax rates, you can select the applicable tax rate here.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "69"
+ },
+ {
+ "text": "Optionally, require billing details from the payer and configure which networks and tokens will be accepted for this specific payment link.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "70"
+ },
+ {
+ "type": "img",
+ "num": "73"
+ },
+ {
+ "text": "Once everything is configured, click Create Link.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "74"
+ },
+ {
+ "text": "A payment link URL will be generated, which you can share with your customers. This link opens the checkout page they will use to pay.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "75"
+ },
+ {
+ "text": "Step 11: Understand the Customer Checkout Experience",
+ "type": "h3"
+ },
+ {
+ "text": "On the checkout page, customers can choose the network they want to use for payment and select the token with which they want to pay.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "76"
+ },
+ {
+ "type": "img",
+ "num": "79"
+ },
+ {
+ "text": "They can also choose their preferred currency, and NodeRails automatically handles currency conversion.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "80"
+ },
+ {
+ "type": "img",
+ "num": "82"
+ },
+ {
+ "text": "In just a few clicks, customers connect their wallets seamlessly.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "83"
+ },
+ {
+ "text": "They then provide their email address and billing information and proceed to authorize the payment.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "84"
+ },
+ {
+ "type": "img",
+ "num": "87"
+ },
+ {
+ "text": "NodeRails divides the payment lifecycle into three states:",
+ "type": "p"
+ },
+ {
+ "items": [
+ "Authorize - The user authorizes spending from their wallet, but funds are not yet deducted.",
+ "Capture - Funds are taken from the user\u2019s wallet and are now held for you; you can safely deliver goods or services.",
+ "Settle - Funds are moved from the TimeLock escrow to your wallet."
+ ],
+ "type": "ol"
+ },
+ {
+ "text": "Authorization is a gasless transaction: the user only needs the token they are paying with and does not incur extra gas fees for the authorization itself.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "88"
+ },
+ {
+ "text": "After authorization, the user clicks the Pay button to complete the transaction.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "89"
+ },
+ {
+ "text": "Within a few seconds, the transaction is processed and the payment is marked as successful.",
+ "type": "p"
+ },
+ {
+ "text": "Step 12: Track Payments and Process Refunds",
+ "type": "h3"
+ },
+ {
+ "text": "Return to your dashboard and open the Payments section to view details of the transaction.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "90"
+ },
+ {
+ "text": "Here you can see all payment details: who the user was, when the payment was authorized, when it was captured, the payment source, and the transaction hash.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "91"
+ },
+ {
+ "type": "img",
+ "num": "92"
+ },
+ {
+ "text": "From this view, you can issue refunds - something many other platforms do not support at this level of control.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "93"
+ },
+ {
+ "text": "You can refund the full amount, a percentage of the amount, or a specific partial amount, depending on your needs.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "94"
+ },
+ {
+ "type": "img",
+ "num": "96"
+ },
+ {
+ "text": "Step 13: Manage Subscriptions, Invoices, and Payouts",
+ "type": "h3"
+ },
+ {
+ "text": "You can configure subscriptions to support recurring billing. Create product plans and set billing frequencies such as weekly, monthly, or yearly.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "97"
+ },
+ {
+ "type": "img",
+ "num": "98"
+ },
+ {
+ "text": "Similarly, you can generate invoices, send them via email, and have customers pay directly through the invoice. Payments settle directly to your wallet.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "99"
+ },
+ {
+ "type": "img",
+ "num": "100"
+ },
+ {
+ "text": "You can also configure payouts to global wallets or bank accounts and manage recipients for these payouts.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "101"
+ },
+ {
+ "type": "img",
+ "num": "104"
+ },
+ {
+ "text": "Step 14: Customer Receipts and Dispute Handling",
+ "type": "h3"
+ },
+ {
+ "text": "Every customer who pays on your platform receives a payment receipt from NodeRails.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "105"
+ },
+ {
+ "type": "img",
+ "num": "106"
+ },
+ {
+ "text": "They also receive a system-generated PDF document containing all necessary details, which can be used for visa applications, tax filings, or other official purposes.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "107"
+ },
+ {
+ "type": "img",
+ "num": "108"
+ },
+ {
+ "text": "Customers can open disputes if there is an issue with a payment. NodeRails provides robust fraud and chargeback support, handling the dispute process for both merchants and users.",
+ "type": "p"
+ },
+ {
+ "text": "This concludes the overview of using NodeRails as a crypto payments infrastructure for merchants.",
+ "type": "p"
+ },
+ {
+ "type": "img",
+ "num": "109"
+ },
+ {
+ "text": "",
+ "type": "p"
+ }
+ ],
+ "faq": [
+ {
+ "text": "NodeRails Crypto Payments Infrastructure : Merchant FAQ",
+ "type": "h1"
+ },
+ {
+ "text": "Introduction",
+ "type": "h2"
+ },
+ {
+ "text": "This FAQ summarizes the key capabilities and workflows demonstrated in the NodeRails crypto payments infrastructure demo for merchants and organizations looking to accept and manage crypto payments.",
+ "type": "p"
+ },
+ {
+ "text": "FAQ Content",
+ "type": "h2"
+ },
+ {
+ "text": "Getting Started and Onboarding",
+ "type": "h3"
+ },
+ {
+ "text": "Q1. How do I sign up for a new merchant account on NodeRails?To sign up, go to the merchant login page and choose to create a new account. Enter your email and a password, then click \u201cCreate Account.\u201d You will then go through a brief verification and onboarding flow.",
+ "type": "p"
+ },
+ {
+ "text": "Q2. What information is required during onboarding, and how long does it take?The onboarding process takes about thirty seconds. You need to specify whether you are registering as an individual or a business and then create your first app (testnet or production). Additional details, such as wallet connections, can be configured during or after onboarding.",
+ "type": "p"
+ },
+ {
+ "text": "Q3. What is the difference between a test app and a production app?A test app is used when you are in sandbox mode, just testing and exploring the platform without handling real payments. A production app is used when you are ready to accept real payments from customers in a live environment. You can start with a test app and later create a production app in a similar way.",
+ "type": "p"
+ },
+ {
+ "text": "Q4. Can I skip wallet connection during onboarding?You can skip wallet connection initially, but you must connect a wallet to receive settled funds. When users pay you, the settled funds go directly to your wallet, so you need to authorize the use of a wallet and sign in to verify ownership before going live.",
+ "type": "p"
+ },
+ {
+ "text": "Q5. Is NodeRails custodial or non-custodial?NodeRails is a non-custodial platform. Funds settle directly to the merchant\u2019s wallet rather than being held by the platform.",
+ "type": "p"
+ },
+ {
+ "text": "Apps, Dashboard, and Analytics",
+ "type": "h3"
+ },
+ {
+ "text": "Q6. What is the difference between organization-level and app-level dashboards?The organization-level overview shows aggregated details and analytics across your organization, such as which tokens or networks customers are using, and active subscriptions across all apps. The app-level dashboard focuses on metrics for a specific app, including monthly revenue rate, disputes, refunds, active subscriptions, total payments, and more.",
+ "type": "p"
+ },
+ {
+ "text": "Q7. Can I create multiple apps under the same organization?Yes. You can create multiple apps for different properties such as a website, mobile app, or any tool where you accept payments. Each app can have its own configuration and analytics while still being managed under the same organization.",
+ "type": "p"
+ },
+ {
+ "text": "Q8. What kind of app-level analytics are available?For each app, you can track monthly revenue rate, disputes, refunds, active subscriptions, total payments, and checkout sessions happening on your website or product. The platform also tracks customers, their wallets, and spending behavior automatically whenever someone pays you.",
+ "type": "p"
+ },
+ {
+ "text": "Wallets, Networks, Tokens, and Settlement",
+ "type": "h3"
+ },
+ {
+ "text": "Q9. How do I configure which networks and tokens my app accepts?At the app level, you must enable the networks on which you want to accept payments, such as Ethereum Sepolia. For each enabled network, you then select which tokens you want to accept and can toggle them on or off as needed. This configuration can also be customized per payment using the SDK.",
+ "type": "p"
+ },
+ {
+ "text": "Q10. Can I accept payments on multiple chains like Ethereum, Solana, and Sui?Yes. You can accept payments on multiple chains, including Ethereum, Solana, Sui, and X Layer. For each chain, you need to connect the relevant wallet (for example, separate wallets for Solana and Sui) to receive settlements.",
+ "type": "p"
+ },
+ {
+ "text": "Q11. How does the \u201cconvert to one token\u201d feature work?With \u201cconvert to one token\u201d enabled, you can accept any supported cryptocurrency and have all incoming payments converted into a stablecoin at payment time. The platform handles the conversion so that you are not exposed to volatility in other cryptocurrencies such as Bitcoin or Ethereum.",
+ "type": "p"
+ },
+ {
+ "text": "Q12. What does \u201csettle to one chain\u201d mean?\u201cSettle to one chain\u201d allows you to consolidate settlements on a single blockchain. Instead of receiving funds on multiple chains (e.g., Ethereum, Solana, Sui, X Layer), you can choose one chain and one token to settle in, and the platform handles the swapping and bridging for you.",
+ "type": "p"
+ },
+ {
+ "text": "Banking, Fiat Settlement, and Global Accounts",
+ "type": "h3"
+ },
+ {
+ "text": "Q13. Can I settle funds directly to a bank account instead of a wallet?Yes. If you prefer to settle funds to a bank rather than to a merchant wallet, you can connect your own bank account, provide the required information, and complete KYC or KYB. After that, you can configure settlement to bank.",
+ "type": "p"
+ },
+ {
+ "text": "Q14. What if I do not have a bank account but want to receive money in global currencies?If you do not have a bank account, you can open global accounts (for example, USD, Euro, BRL, GBP accounts) through the platform at a rate of thirty dollars per year. Funds settle to your wallet through these accounts and are converted to stablecoins.",
+ "type": "p"
+ },
+ {
+ "text": "Q15. Does the platform support payouts to bank accounts?Yes. You can use the payout functionality to send funds to banks around the world in stablecoins or crypto, in addition to wallet payouts. Before using payouts to bank, you must connect your bank account.",
+ "type": "p"
+ },
+ {
+ "text": "Team Management, Taxes, and Configuration",
+ "type": "h3"
+ },
+ {
+ "text": "Q16. Can I add team members and control their access?Yes. As an organization or individual merchant, you can add team members and assign permissions that define what they can monitor and access within your organization. This allows for controlled collaboration on financial operations and configuration.",
+ "type": "p"
+ },
+ {
+ "text": "Q17. How are taxes such as GST or VAT handled?You can define tax rates such as GST or VAT based on the country in which you operate. These tax rates can then be applied to payments, including payment links, so that appropriate tax is calculated and collected.",
+ "type": "p"
+ },
+ {
+ "text": "Payment Links and Checkout Experience",
+ "type": "h3"
+ },
+ {
+ "text": "Q18. How do I create a payment link?To create a payment link, go to the payment link section and provide a name (for example, \u201cpro payment link for my web app\u201d). You can associate a product plan if you have created one, or simply specify an amount (e.g., one US dollar), add a description, optional success and cancel URLs, and choose any applicable tax rates. You can also configure which networks and tokens are allowed for that specific link, then click \u201cCreate Link\u201d to generate a shareable URL.",
+ "type": "p"
+ },
+ {
+ "text": "Q19. What does the end-customer checkout experience look like?Customers visiting the payment link see a checkout page where they can select the network and currency they want to pay with. The platform automatically handles currency conversions and allows users to connect their wallets seamlessly. Customers enter their email and billing details and then authorize and complete the payment.",
+ "type": "p"
+ },
+ {
+ "text": "Q20. Can I require billing details for payment links?Yes. When creating a payment link, you can enable a setting to require billing details. This ensures that customers must provide their billing information before completing payment.",
+ "type": "p"
+ },
+ {
+ "text": "Payment Flow: Authorize, Capture, Settle",
+ "type": "h3"
+ },
+ {
+ "text": "Q21. What are the \u201cauthorize\u201d, \u201ccapture\u201d, and \u201csettle\u201d states in a payment?NodeRails divides the payment lifecycle into three states: authorize, capture, and settle. Authorize means the user has granted permission to spend from their wallet but funds have not yet been deducted. Capture means the funds have been taken from the customer\u2019s wallet and are now with you, at which point you can deliver goods or services. Settle means the funds have moved from the TimeLock escrow to your wallet.",
+ "type": "p"
+ },
+ {
+ "text": "Q22. Is the authorization step gasless for users?Yes. The authorization step is a gasless transaction for the user; they do not need additional funds beyond the amount they are paying with. The platform takes an authorization that does not cost them anything, and then they confirm payment.",
+ "type": "p"
+ },
+ {
+ "text": "Q23. What information about a payment can I see in the dashboard?In the payments section of the dashboard, you can view detailed information about each payment, including who the user was, when it was authorized, when it was captured, the source, and the transaction hash. This allows you to track the full lifecycle and provenance of each transaction.",
+ "type": "p"
+ },
+ {
+ "text": "Refunds, Disputes, and Fraud Handling",
+ "type": "h3"
+ },
+ {
+ "text": "Q24. Does NodeRails support refunds, and how granular are they?Yes. You can issue refunds directly from the platform. Refunds can be full, based on a percentage of the original amount, or based on a specific amount, providing fine-grained control over how much is returned to the customer.",
+ "type": "p"
+ },
+ {
+ "text": "Q25. How are disputes and chargebacks handled?There is a dedicated dispute section where you can view and respond to disputes. Customers can open disputes if there is a problem with a payment, and the platform provides fraud and chargeback support, handling the process for both merchants and users.",
+ "type": "p"
+ },
+ {
+ "text": "Subscriptions, Invoices, and Recurring Billing",
+ "type": "h3"
+ },
+ {
+ "text": "Q26. How do subscriptions and recurring billing work?You can create product plans (for example, ten dollar, twenty dollar, thirty dollar plans) and use them to set up recurring billing. Subscriptions can be configured to charge customers every week, every month, or yearly, and you can manage and refund subscription payments similarly to one-time payments.",
+ "type": "p"
+ },
+ {
+ "text": "Q27. Can I generate invoices and get paid via invoice?Yes. You can generate invoices within the platform and send them to customers via email. Customers pay on those invoices, and the funds are settled directly to your wallet.",
+ "type": "p"
+ },
+ {
+ "text": "Payouts and Recipient Management",
+ "type": "h3"
+ },
+ {
+ "text": "Q28. What payout options are available?The platform supports payouts to global wallets and banks in stablecoins or other crypto. This can be used, for example, to send global salaries or other payments worldwide.",
+ "type": "p"
+ },
+ {
+ "text": "Q29. Can I manage payout recipients and activity?Yes. You can manage recipients for payouts and track related activity within the platform. This helps you maintain a clear record of outgoing payments.",
+ "type": "p"
+ },
+ {
+ "text": "SDK and Developer Controls",
+ "type": "h3"
+ },
+ {
+ "text": "Q30. Can everything shown in the UI also be done via an SDK?Yes. All operations demonstrated in the interface - such as configuring networks and tokens, setting per-payment currencies, creating payment links, and more - can also be performed using the SDK. This allows developers to integrate NodeRails functionality directly into their applications and workflows.",
+ "type": "p"
+ },
+ {
+ "text": "Customer Receipts and Documentation",
+ "type": "h3"
+ },
+ {
+ "text": "Q31. Do customers receive receipts for their payments?Yes. Customers who pay through your platform receive a payment receipt from NodeRails. They also receive a system-generated PDF document containing all necessary information, which they can use for purposes such as visa applications or tax reporting.",
+ "type": "p"
+ }
+ ]
+}
