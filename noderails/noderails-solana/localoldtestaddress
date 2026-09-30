@@ -1,0 +1,33 @@
+# Archived devnet program addresses (before fresh redeploy)
+# Saved: 2026-05-09 — old programs remain on-chain unused; new IDs are in Anchor.toml + declare_id!
+
+cluster: devnet
+rpcUrl: https://api.devnet.solana.com
+
+programs:
+  noderails_escrow: Cgtqm97GHCyKtrhzNDPNNRWHrNN8MivvsquWM3JQD9k9
+  noderails_merchant_manager: D4kpTMqAPYroEd5gSdRAw6DTeKtoP8D5VFRgBWqQZeuj
+
+deploy.devnet.json (at time of archive):
+  feeRecipient: FDS91qyGXJYn9DwBPMyQ7B52rADDwyoAg5wSgYhNRn4B
+  transactionAuthorities:
+    - 7N4S1sdhsmYHPQPL41SfZS1ga65DiuT62JYsttxeazYq
+  authorizedNoderailsKeys:
+    - 7N4S1sdhsmYHPQPL41SfZS1ga65DiuT62JYsttxeazYq
+
+Note: PDAs (cfg, mm_cfg, etc.) are derived from program IDs above; they are invalid after program rotation.
+
+---
+
+## Redeploy (2026-05-09) — intermediate IDs
+
+Solana does not close old programs; previous IDs above are orphaned on devnet.
+
+| Program | Address | Notes |
+|---------|---------|--------|
+| noderails_escrow | AHgmpAYqpvrfVHVavH6fJLrbUbm5JaLyviPqTn2pogko | Superseded again (see Anchor.toml) |
+| noderails_merchant_manager | GKiurKP2ELeBXxjvXncvLzHpUyHVzBvWzuzm1f2i4KUz | |
+
+Current devnet escrow (see declare_id! / Anchor.toml): ErG2kE3uhKxkBympZytSjvxGik7aSigvpeDAxC9gcT6Y
+
+Finish MM deploy / inits using only deploy.devnet.json and pnpm deploy:devnet (temporarily set preDeploy keysSync/build/deploy false if you only need initialize after manual anchor deploy).

@@ -1,0 +1,28 @@
+{
+  "cluster": "devnet",
+  "rpcUrl": "https://api.devnet.solana.com",
+  "anchorWallet": "../solana/noderails/devnet-wallet.json",
+  "preDeploy": {
+    "keysSync": true,
+    "build": true,
+    "deploy": true
+  },
+  "escrow": {
+    "deploy": true,
+    "crate": "noderails_escrow",
+    "initialize": true,
+    "payerKeypair": "../solana/noderails/devnet-wallet.json",
+    "superAdminKeypair": "../solana/noderails/devnet-wallet.json",
+    "feeRecipient": "FDS91qyGXJYn9DwBPMyQ7B52rADDwyoAg5wSgYhNRn4B",
+    "transactionAuthorities": ["7N4S1sdhsmYHPQPL41SfZS1ga65DiuT62JYsttxeazYq","EDXXC5P2Gdwa6zjUzsqJnDawBA8rXQMGFBzb5q5bfy2F"],
+    "authorizedNoderailsKeys": ["7N4S1sdhsmYHPQPL41SfZS1ga65DiuT62JYsttxeazYq","EDXXC5P2Gdwa6zjUzsqJnDawBA8rXQMGFBzb5q5bfy2F"]
+  },
+  "merchantManager": {
+    "deploy": true,
+    "crate": "noderails_merchant_manager",
+    "initialize": true,
+    "payerKeypair": "../solana/noderails/devnet-wallet.json",
+    "superAdminKeypair": "../solana/noderails/devnet-wallet.json",
+    "firstAdminKeypair": "../solana/noderails/mainnet-wallet.json"
+  }
+}
