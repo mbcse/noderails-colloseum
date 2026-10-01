@@ -1,0 +1,29 @@
+{
+  "network": "testnet",
+  "chainId": 202,
+  "rpcUrl": "https://fullnode.testnet.sui.io:443",
+  "gasBudget": 500000000,
+  "preDeploy": {
+    "build": true,
+    "test": true,
+    "publish": true
+  },
+  "escrow": {
+    "initialize": true,
+    "upgrade": false,
+    "feeRecipient": "0x52e73d9229421d066f80ea7fa3e65f2e31ea74972c170ddb7b57216fd1d5bd4d",
+    "superAdmin": "0x52e73d9229421d066f80ea7fa3e65f2e31ea74972c170ddb7b57216fd1d5bd4d",
+    "transactionAuthorities": [
+      "0x0661bcf5cf7be98816ba52dfc965fa180b88d65b8cc1c99897a36ad2eb338587",
+      "0x54591a3a28ea92720185b700b6a2fa1a0f1c94e04c74808750d8eb5cfb8af343"
+    ],
+    "authorizedNoderailsKeys": [
+      "Kg0aONEoAY7Y42G50nQ2GU8tcNpusHpN+yeUkqeWvhE=",
+      "pV8s0L//kyKtwfHBgud5YoWDl36/DOi5WOdAAau4IS8="
+    ]
+  },
+  "merchantManager": {
+    "initialize": true,
+    "superAdmin": "0x52e73d9229421d066f80ea7fa3e65f2e31ea74972c170ddb7b57216fd1d5bd4d"
+  }
+}

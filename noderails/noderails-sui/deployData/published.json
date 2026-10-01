@@ -1,0 +1,14 @@
+{
+  "network": "testnet",
+  "chainId": 202,
+  "escrowPackageId": "0xcdc6ba2c8f87327f31f988b2f06334584ae0df9a2272f21f5a0acacf152e4ba7",
+  "merchantManagerPackageId": "0xdbd478ad5f9f48fe6ac069ce4e9d113e9ecc6f17e11cd711f8859a8dbcaacb0c",
+  "escrowConfigObjectId": "0xb12ddd8e394356b2c287a4374d907e71c6126a68e79065efa33d40ad180b1003",
+  "paymentRegistryObjectId": "0x3f2d82efef6aef7d256db8f919121f52d1e1359b7ac63475d54e76cbc13a1923",
+  "merchantManagerConfigObjectId": "0xe40986b6b83ebfec506bea6a6cc3ffe2a0501c6242cd50bf5ada3beb7c177236",
+  "nonceRegistryObjectId": "0x5eecf783533791b2dea9fc0133c1db167e39e22692fb97ffb20db567cb3a8481",
+  "escrowUpgradeCapId": "0x791f1dba4b90ce1db47a2e48ebabada3c743c8815d6ca4b36d21d568160ad5e1",
+  "merchantManagerUpgradeCapId": "0xadc531ed42f430799d9f0b3e165fcda82631386857b3185d31e084a2386655c4",
+  "publishedAt": "2026-06-19T13:57:29.121Z",
+  "walletRegistryObjectId": "0xcb507f35786d5a79d776a75c39f2c53fe5c3846bfecffa926015afac1fb44f04"
+}

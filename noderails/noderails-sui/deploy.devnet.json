@@ -1,0 +1,24 @@
+{
+  "network": "devnet",
+  "chainId": 201,
+  "rpcUrl": "https://fullnode.devnet.sui.io:443",
+  "gasBudget": 500000000,
+  "preDeploy": {
+    "build": true,
+    "test": true,
+    "publish": true
+  },
+  "escrow": {
+    "initialize": true,
+    "feeRecipient": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "superAdmin": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "transactionAuthorities": [
+      "0x0000000000000000000000000000000000000000000000000000000000000001"
+    ],
+    "authorizedNoderailsKeys": []
+  },
+  "merchantManager": {
+    "initialize": true,
+    "superAdmin": "0x0000000000000000000000000000000000000000000000000000000000000001"
+  }
+}

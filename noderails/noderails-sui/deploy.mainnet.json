@@ -1,0 +1,22 @@
+{
+  "network": "mainnet",
+  "chainId": 203,
+  "rpcUrl": "https://fullnode.mainnet.sui.io:443",
+  "gasBudget": 500000000,
+  "preDeploy": {
+    "build": true,
+    "test": true,
+    "publish": false
+  },
+  "escrow": {
+    "initialize": true,
+    "feeRecipient": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "superAdmin": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "transactionAuthorities": [],
+    "authorizedNoderailsKeys": []
+  },
+  "merchantManager": {
+    "initialize": true,
+    "superAdmin": "0x0000000000000000000000000000000000000000000000000000000000000001"
+  }
+}
