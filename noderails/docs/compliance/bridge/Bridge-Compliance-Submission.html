@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NodeRails Bridge Compliance Submission</title>
+  <style>
+    :root {
+      --ink: #18181b;
+      --muted: #52525b;
+      --accent: #4f46e5;
+      --border: #e4e4e7;
+      --soft: #fafafa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: var(--ink);
+      background: #fff;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: #18181b;
+      color: #fff;
+      font-size: 0.875rem;
+    }
+    .toolbar button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .doc {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .cover {
+      text-align: center;
+      padding: 2rem 0 2.5rem;
+      border-bottom: 2px solid var(--border);
+      page-break-after: always;
+    }
+    .cover h1 { font-size: 1.75rem; margin: 0 0 0.5rem; }
+    .cover p { color: var(--muted); margin: 0.35rem 0; }
+    h1 {
+      font-size: 1.45rem;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--accent);
+      page-break-after: avoid;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 1.5rem 0 0.6rem;
+      page-break-after: avoid;
+    }
+    h3 { font-size: 1rem; margin: 1rem 0 0.4rem; }
+    p, li { margin: 0.5rem 0; }
+    ul { padding-left: 1.25rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--soft); }
+    a { color: var(--accent); text-decoration: none; }
+    .shot {
+      margin: 1rem 0 1.5rem;
+      page-break-inside: avoid;
+    }
+    .shot img {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: block;
+    }
+    .shot figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .ios-shots {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+      page-break-inside: avoid;
+    }
+    .ios-shots .shot {
+      margin: 0;
+      text-align: center;
+    }
+    .ios-shots .shot img {
+      width: auto;
+      max-width: 200px;
+      max-height: 380px;
+      margin: 0 auto;
+    }
+    .ios-shots .shot figcaption {
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .note {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+    }
+    @media print {
+      .toolbar { display: none !important; }
+      .doc { max-width: none; padding: 0; }
+      h1 { page-break-before: auto; }
+    }
+    @page { margin: 16mm 14mm; }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span>NodeRails Bridge Compliance Submission</span>
+    <button type="button" onclick="window.print()">Save as PDF</button>
+  </div>
+
+  <div class="doc">
+    <div class="cover">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);">Bridge Compliance Submission</p>
+      <h1>NodeRails &amp; WallCard</h1>
+      <p>Business overview, client agreements, and product documentation</p>
+      <p><strong>Entity:</strong> NodeRails</p>
+      <p><strong>Website:</strong> <a href="https://www.noderails.com">noderails.com</a></p>
+      <p><strong>WallCard:</strong> <a href="https://wallcard.noderails.com">wallcard.noderails.com</a></p>
+      <p><strong>Contact:</strong> business@noderails.com</p>
+      <p><strong>Date:</strong> July 2026</p>
+    </div>
+
+    <h1>1. Response to Bridge Compliance Request</h1>
+    <p>Thank you for your follow-up. This document supplements our website and onboarding materials with:</p>
+    <ul>
+      <li>A description of our business and the products/services we provide to merchants and payers</li>
+      <li>The contractual framework between NodeRails and its merchant clients</li>
+      <li>A concise business plan and product overview</li>
+      <li>Product screenshots and demos for NodeRails (merchant platform) and WallCard (payer wallet experience)</li>
+    </ul>
+
+    <h1>2. Nature of Business</h1>
+    <p>NodeRails is a <strong>non-custodial payment infrastructure company for businesses</strong>. We provide software that helps online merchants accept payments, manage checkout, issue invoices, run subscriptions, reconcile transactions, and settle funds to wallets or bank accounts designated by the merchant.</p>
+    <p>Our primary clients are <strong>businesses</strong>: international SaaS companies, AI product vendors, software sellers, marketplaces, and other digital merchants. NodeRails is a <strong>technology orchestration layer</strong>. We do not operate as a bank, exchange, or custodian of customer funds.</p>
+    <p><strong>How payments and settlement work:</strong> Customer payments are accepted through NodeRails hosted checkout and on-chain settlement to the merchant's wallet. Virtual accounts for merchants are used separately for <strong>bank settlement offramp only</strong>. Merchants do not receive customer payments into virtual accounts. WallCard serves individual users with optional personal virtual accounts and neo banking features.</p>
+
+    <h2>Products and services provided to clients</h2>
+    <table>
+      <thead>
+        <tr><th>Product</th><th>Client type</th><th>What we provide</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>NodeRails Merchant Platform</strong></td>
+          <td>Businesses, SaaS, marketplaces, creators</td>
+          <td>Hosted checkout, payment links, invoices, subscriptions, merchant dashboard, webhooks, API/SDK, dispute tooling, payout orchestration</td>
+        </tr>
+        <tr>
+          <td><strong>WallCard</strong></td>
+          <td>End users / payers</td>
+          <td>Self-custodial mobile wallet with neo banking features on iOS. Verified users can create personal virtual accounts and access partner card features. Users control their keys and chain addresses.</td>
+        </tr>
+        <tr>
+          <td><strong>Virtual accounts (merchants)</strong></td>
+          <td>International SaaS, AI, and software businesses on NodeRails</td>
+          <td>Bank settlement offramp only: KYC, account request, offramp initiation, and settlement tracking in our software</td>
+        </tr>
+        <tr>
+          <td><strong>Virtual accounts (WallCard)</strong></td>
+          <td>Verified individual users</td>
+          <td>Personal receive accounts, balance display, payout and card workflow in our software</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2.1 Virtual accounts: who uses them and where funds come from</h2>
+    <p>Virtual accounts will be offered in two product contexts. NodeRails provides the software experience, customer onboarding, and transaction attribution.</p>
+
+    <h3>NodeRails Merchant Platform (business users)</h3>
+    <p><strong>Who uses them:</strong> International businesses selling software and digital products, including SaaS companies, AI product vendors, and other online merchants on NodeRails.</p>
+    <p><strong>Why they use them:</strong> For bank settlement offramp only. After collecting customer payments through NodeRails checkout (crypto), merchants use a virtual account to convert and settle their business proceeds to a bank account.</p>
+    <p><strong>Where funds come from:</strong> The merchant's own commerce proceeds already collected on the NodeRails platform. Customer payments are not deposited into merchant virtual accounts. Customers pay through hosted checkout and on-chain settlement; the merchant later offramps eligible balances to bank via the virtual account.</p>
+    <p><strong>What happens next:</strong> Merchant initiates offramp from the dashboard. Settlement is tracked against the merchant's business account. Funds are sent to the merchant's designated bank account through the offramp workflow.</p>
+
+    <h3>WallCard (individual users)</h3>
+    <p><strong>Who uses them:</strong> Verified individual users of the WallCard mobile app who opt in to neo banking features alongside the self-custodial wallet.</p>
+    <p><strong>Why they use them:</strong> To receive fiat into a personal virtual account, view balances in one app, and access card and conversion features where available.</p>
+    <p><strong>Where funds come from:</strong> The user's own inbound transfers, such as salary, client payments, or personal top-ups from accounts they control. Funds belong to the verified user and are not pooled with merchant or NodeRails operating funds.</p>
+    <p><strong>What happens next:</strong> The user manages their account in WallCard. Fiat account balances and crypto wallet assets are kept separate. On-chain assets remain self-custodial.</p>
+
+    <h3>KYC and compliance</h3>
+    <div class="note">
+      <p>NodeRails will complete identity and business verification (KYC) for every user before a virtual account is provisioned, on both the merchant platform and WallCard.</p>
+      <p>We will comply with applicable partner program obligations, including prohibited use rules, accurate customer information, sanctions screening, and transaction monitoring requirements.</p>
+      <p>NodeRails does not hold fiat customer funds. We provide onboarding, product workflow, offramp initiation, and settlement tracking only.</p>
+    </div>
+
+    <h1>3. Contracts and Service Agreements with Clients</h1>
+    <p>NodeRails onboard merchants through our self-serve dashboard and developer portal. The primary contractual relationship is established through our published legal terms, accepted at account creation and continued use of the platform.</p>
+
+    <h2>3.1 Merchant Terms and Conditions</h2>
+    <p>All merchants agree to the NodeRails Terms and Conditions before using the platform:</p>
+    <p><strong>URL:</strong> <a href="https://www.noderails.com/terms">https://www.noderails.com/terms</a><br />
+    <strong>Effective date:</strong> 24 March 2026</p>
+    <p>Key provisions relevant to Bridge review:</p>
+    <ul>
+      <li><strong>Scope of service:</strong> crypto payment processing workflows, hosted checkout, payment links, invoicing, subscriptions, payout tooling, APIs, SDKs, and dashboards</li>
+      <li><strong>Non-custodial model:</strong> NodeRails does not custody user or customer funds or private keys</li>
+      <li><strong>Compliance responsibilities:</strong> shared model with merchant KYC/AML obligations, prohibited use rules, sanctions compliance, and accurate business information</li>
+      <li><strong>Prohibited activities:</strong> fraud, money laundering, terrorist financing, sanctions evasion, illegal goods/services</li>
+      <li><strong>Fees:</strong> disclosed platform pricing; no hidden network charges beyond published plan terms unless covered by enterprise agreement</li>
+    </ul>
+
+    <h2>3.2 Privacy Policy</h2>
+    <p><strong>URL:</strong> <a href="https://www.noderails.com/privacy">https://www.noderails.com/privacy</a><br />
+    <strong>Effective date:</strong> 24 March 2026</p>
+    <p>Covers account data, service usage metadata, billing information, support communications, and clarifies our non-custodial data handling model.</p>
+
+    <h2>3.3 AML / CFT Policy</h2>
+    <p><strong>URL:</strong> <a href="https://www.noderails.com/compliance">https://www.noderails.com/compliance</a></p>
+    <p>NodeRails maintains a published AML/CFT policy covering screening, monitoring, merchant due diligence support, and cooperation with regulated partners for account-based flows.</p>
+
+    <h2>3.4 How merchant agreements are formed</h2>
+    <div class="note">
+      <p><strong>Standard merchant onboarding:</strong> Merchant creates an account, accepts Terms and Privacy Policy via click-wrap acceptance, completes business profile and compliance questionnaire, connects settlement wallet or partner account, and receives API keys for integration.</p>
+      <p><strong>Enterprise merchants:</strong> Larger or regulated merchants may sign supplemental order forms or enterprise addenda covering pricing, support, and integration scope. These follow the same core Terms unless explicitly amended.</p>
+      <p><strong>Payer relationship:</strong> End customers paying through hosted checkout or WallCard interact with merchant-branded payment flows. WallCard payer terms are presented within the WallCard product experience.</p>
+    </div>
+
+    <h2>3.5 Nature of services summary for compliance</h2>
+    <table>
+      <thead>
+        <tr><th>Service</th><th>NodeRails role</th><th>Partner / client role</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Merchant payment acceptance</td>
+          <td>Software, checkout, reconciliation, webhooks</td>
+          <td>Merchant sells goods/services; designates settlement destination</td>
+        </tr>
+        <tr>
+          <td>Crypto settlement</td>
+          <td>On-chain settlement orchestration to merchant wallet</td>
+          <td>Merchant controls receiving wallet</td>
+        </tr>
+        <tr>
+          <td>Virtual accounts (merchants)</td>
+          <td>KYC, offramp request UI, settlement tracking</td>
+          <td>Merchant offramps own commerce proceeds to bank; customer payments stay on checkout/crypto rails</td>
+        </tr>
+        <tr>
+          <td>Virtual accounts (WallCard users)</td>
+          <td>KYC, account request UI, balance display, payout and card workflow initiation</td>
+          <td>Verified user receives own inbound transfers for personal use</td>
+        </tr>
+        <tr>
+          <td>Payer checkout via WallCard</td>
+          <td>Self-custodial wallet UX, signing, and connected app approvals</td>
+          <td>Payer controls wallet keys and authorizes individual transactions</td>
+        </tr>
+        <tr>
+          <td>Crypto card (WallCard, planned)</td>
+          <td>User-facing card workflow and spend controls in app</td>
+          <td>Regulated partner issues card and performs card compliance</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>4. Business Plan Summary</h1>
+    <h2>4.1 Problem</h2>
+    <p>Global digital merchants need one platform to accept cross-border payments, reconcile orders, and settle to crypto treasury, stablecoin, or bank accounts. Traditional rails are expensive and fragmented. Crypto rails alone exclude mainstream payers.</p>
+
+    <h2>4.2 Solution</h2>
+    <p><strong>Universal Settlement:</strong> NodeRails gives merchants Stripe-like operations for programmable money: checkout, links, invoices, subscriptions, disputes, webhooks, and payouts. Customer payments settle on crypto rails. Virtual accounts give merchants a bank settlement offramp for their business proceeds. WallCard gives payers a familiar wallet experience with optional personal banking features.</p>
+
+    <h2>4.3 Target customers</h2>
+    <ul>
+      <li>International SaaS, AI, and software businesses selling subscriptions and digital products</li>
+      <li>Cross-border B2B merchants, marketplaces, and creators</li>
+      <li>Developers integrating payments via NodeRails API/SDK</li>
+      <li>Verified WallCard users seeking personal virtual accounts and neo banking features</li>
+    </ul>
+
+    <h2>4.4 Business model</h2>
+    <ul>
+      <li>Platform transaction fee on processed commerce (introductory pricing published on website)</li>
+      <li>Future revenue from premium features, enterprise support, and treasury/settlement services</li>
+      <li>Virtual account and fiat flows monetized in partnership with regulated providers</li>
+    </ul>
+
+    <h2>4.5 Planned use of virtual accounts</h2>
+    <p>Virtual accounts will serve two user groups:</p>
+    <ul>
+      <li><strong>NodeRails merchants (business):</strong> International SaaS, AI, and software businesses that offramp their commerce proceeds to a bank account. Not used to receive customer payments.</li>
+      <li><strong>WallCard users (individual):</strong> Verified individuals who create a personal virtual account inside the WallCard neo crypto banking app</li>
+    </ul>
+    <p>NodeRails and WallCard handle KYC, product experience, and offramp or payout initiation. See Section 2.1 for full detail on users, fund sources, and compliance.</p>
+
+    <h2>4.6 Current stage</h2>
+    <ul>
+      <li>NodeRails merchant platform: built and operational for crypto commerce</li>
+      <li>WallCard: live product demo and SDK at wallcard.noderails.com</li>
+      <li>Fiat / virtual accounts: integration phase with incoming partners</li>
+    </ul>
+
+    <h1>5. Product Screenshots: NodeRails Merchant Platform</h1>
+
+    <figure class="shot">
+      <img src="assets/dashboard-overview.png" alt="NodeRails merchant dashboard overview" />
+      <figcaption>Figure 1. Merchant dashboard: payment stats, networks, and wallet balances.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/payments-list.png" alt="NodeRails payments list" />
+      <figcaption>Figure 2. Payments list: merchant transaction history and status tracking.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/payment-details.png" alt="NodeRails payment details" />
+      <figcaption>Figure 3. Payment details: lifecycle, capture, settlement, and dispute context.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/payment-links.png" alt="NodeRails payment links" />
+      <figcaption>Figure 4. Payment links: shareable checkout URLs for merchants.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/checkout.png" alt="NodeRails hosted checkout" />
+      <figcaption>Figure 5. Hosted checkout: payer-facing payment page with chain and token selection.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/invoice-email.png" alt="NodeRails invoice email" />
+      <figcaption>Figure 6. Invoicing: branded invoice delivery to customers.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/subscriptions.png" alt="NodeRails subscriptions" />
+      <figcaption>Figure 7. Subscriptions: recurring billing management for merchants.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/payment-receipt.png" alt="NodeRails payment receipt" />
+      <figcaption>Figure 8. Payment receipt: customer confirmation after successful payment.</figcaption>
+    </figure>
+
+    <h1>6. Product Screenshots: WallCard (iOS)</h1>
+    <p><strong>WallCard is not a fiat bank card.</strong> It is a <strong>self-custodial mobile wallet</strong> that presents wallet functionality in a familiar card-style interface. Users control their own keys and on-chain addresses (Ethereum and Solana). WallCard is designed for signing, sending, receiving, and approving payments in connected apps and checkout flows.</p>
+    <p>NodeRails is extending WallCard into a <strong>neo crypto banking app</strong>. Verified users can optionally create a personal virtual account while keeping the self-custodial wallet for on-chain assets. Card features will be offered separately where licensed.</p>
+    <ul>
+      <li><strong>Virtual accounts:</strong> Personal receive accounts for verified users. Funds come from the user's own inbound transfers (salary, client payments, personal top-ups). Crypto wallet remains self-custodial and separate from fiat account activity.</li>
+      <li><strong>Crypto card features:</strong> Regulated spend card, separate from the self-custodial wallet core</li>
+    </ul>
+    <p>Users must complete KYC before any virtual account is created. NodeRails does not hold fiat customer funds.</p>
+    <p><strong>Live product:</strong> <a href="https://wallcard.noderails.com">wallcard.noderails.com</a></p>
+
+    <div class="ios-shots">
+    <figure class="shot">
+      <img src="assets/wallcard-ios-welcome.png" alt="WallCard iOS welcome screen" />
+      <figcaption>Figure 9. WallCard iOS: welcome screen. Self-custody, card wallet, mobile native.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/wallcard-ios-home.png" alt="WallCard iOS home screen" />
+      <figcaption>Figure 10. WallCard iOS: home screen with self-custodial wallet, virtual account number, and chain balances.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/wallcard-ios-account.png" alt="WallCard iOS account settings" />
+      <figcaption>Figure 11. WallCard iOS: account settings showing bank account number, card reference, and user-controlled Ethereum and Solana addresses.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/wallcard-ios-balances.png" alt="WallCard iOS balances and activity" />
+      <figcaption>Figure 12. WallCard iOS: chain balances and recent signing activity.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="assets/wallcard-ios-card.png" alt="WallCard iOS card and connected app controls" />
+      <figcaption>Figure 13. WallCard iOS: card controls and connected app signing permissions for EVM and Solana.</figcaption>
+    </figure>
+    </div>
+
+    <h1>7. Product Flow Overview</h1>
+    <h2>Merchant flow</h2>
+    <ol>
+      <li>Merchant signs up and accepts Terms and Privacy Policy</li>
+      <li>Merchant creates app, API keys, products, payment links, or invoices</li>
+      <li>Customer pays through hosted checkout or WallCard</li>
+      <li>NodeRails records payment, sends webhooks, and shows status in dashboard</li>
+      <li>Funds settle to merchant wallet or partner-connected account</li>
+      <li>Merchant initiates payout or treasury sweep where supported</li>
+    </ol>
+
+    <h2>Virtual account flow: NodeRails merchants (bank settlement offramp)</h2>
+    <p>This flow is separate from payment acceptance. Customer payments are handled through the merchant flow above. Virtual accounts are used only when a merchant offramps existing business proceeds to bank.</p>
+    <ol>
+      <li>Merchant completes business KYC on the NodeRails platform</li>
+      <li>Merchant requests a virtual account for bank settlement offramp</li>
+      <li>Virtual account is provisioned after verification</li>
+      <li>Merchant initiates offramp of their business proceeds from the dashboard</li>
+      <li>Funds settle to the merchant's designated bank account; activity tracked in NodeRails</li>
+    </ol>
+
+    <h2>Virtual account flow: WallCard users</h2>
+    <ol>
+      <li>User downloads WallCard and completes identity verification (KYC)</li>
+      <li>User opts in to create a personal virtual account in the app</li>
+      <li>Virtual account is provisioned after verification</li>
+      <li>User receives inbound transfers from their own sources (salary, clients, personal accounts)</li>
+      <li>User views balance and activity in WallCard; crypto wallet remains self-custodial</li>
+      <li>User may access card or conversion features where available</li>
+    </ol>
+
+    <h1>8. Supporting Documents</h1>
+    <ul>
+      <li>Terms and Conditions: <a href="https://www.noderails.com/terms">https://www.noderails.com/terms</a></li>
+      <li>Privacy Policy: <a href="https://www.noderails.com/privacy">https://www.noderails.com/privacy</a></li>
+      <li>AML/CFT Policy: <a href="https://www.noderails.com/compliance">https://www.noderails.com/compliance</a></li>
+      <li>Developer documentation: <a href="https://www.noderails.com/docs">https://www.noderails.com/docs</a></li>
+    </ul>
+
+    <h1>9. Contact</h1>
+    <p>For additional contracts, merchant samples under NDA, or live product walkthrough:</p>
+    <p><strong>Email:</strong> business@noderails.com<br />
+    <strong>Website:</strong> <a href="https://www.noderails.com">noderails.com</a><br />
+    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/noderails">linkedin.com/company/noderails</a></p>
+  </div>
+</body>
+</html>
