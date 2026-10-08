@@ -1,0 +1,40 @@
+{
+  "name": "noderails",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Crypto payment infrastructure platform",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "bash scripts/dev-concurrently.sh",
+    "dev:concurrently": "bash scripts/dev-concurrently.sh",
+    "dev:turbo": "bash scripts/with-doppler.sh turbo run dev --ui stream",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "queue:clear": "bash scripts/with-doppler.sh node scripts/clear-bullmq.mjs",
+    "db:generate": "bash scripts/with-doppler.sh pnpm --filter @noderails/database generate",
+    "db:push": "bash scripts/with-doppler.sh pnpm --filter @noderails/database push",
+    "db:migrate": "bash scripts/with-doppler.sh pnpm --filter @noderails/database migrate",
+    "db:migrate:deploy": "bash scripts/with-doppler.sh pnpm --filter @noderails/database migrate:deploy",
+    "db:studio": "bash scripts/with-doppler.sh pnpm --filter @noderails/database studio",
+    "db:reset": "bash scripts/with-doppler.sh pnpm --filter @noderails/database reset",
+    "contracts:ops-ui": "pnpm --filter noderails-contracts-ops-ui start",
+    "contracts:check-forge-tempo": "bash noderails-contracts/script/check-foundry-tempo.sh",
+    "deploy:solana:mainnet": "pnpm --filter @noderails/anchor-deploy deploy:mainnet",
+    "deploy:sui:devnet": "pnpm --filter @noderails/sui-deploy deploy:devnet",
+    "deploy:sui:testnet": "pnpm --filter @noderails/sui-deploy deploy:testnet",
+    "deploy:sui:mainnet": "pnpm --filter @noderails/sui-deploy deploy:mainnet"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "ioredis": "^5.4.0"
+  }
+}

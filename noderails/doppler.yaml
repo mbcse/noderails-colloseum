@@ -1,0 +1,3 @@
+setup:
+  project: noderails
+  config: dev_backend
