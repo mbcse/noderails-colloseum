@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NodeRails marketing shots</title>
+  <style>
+    @font-face {
+      font-family: Saans;
+      src: url("/apps/landing/src/fonts/SaansUprightsVF.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root {
+      --bg: #fff;
+      --fg: #0a1628;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #635bff;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+      --warn: #d97706;
+      --warn-bg: #fffbeb;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --info-bg: #eef2ff;
+      --card-shade: inset 0 1px 0 rgba(255,255,255,.95), 0 1px 2px rgba(99,91,255,.05), 0 8px 22px rgba(99,91,255,.07);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: Saans, "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--fg);
+      background: #fff;
+      font-variant-numeric: tabular-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    .dash { display: flex; height: 900px; width: 1440px; background: #fff; }
+    .sidebar {
+      width: 248px;
+      border-right: 1px solid var(--border);
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; padding: 8px 8px 16px; }
+    .brand svg { width: 28px; height: 28px; }
+    .brand b { display: block; font-size: 14px; letter-spacing: -.02em; }
+    .brand small { display: block; font-size: 10px; color: var(--muted); }
+    .nav-label { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #94a3b8; padding: 10px 10px 6px; }
+    .nav a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 10px; border-radius: 8px;
+      color: #334155; text-decoration: none; font-size: 13.5px; font-weight: 500;
+    }
+    .nav a.active { background: #f1f5f9; color: var(--fg); }
+    .nav svg { width: 16px; height: 16px; opacity: .75; }
+    .app-switch {
+      margin: 8px 6px 4px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 10px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .app-switch strong { display: block; font-size: 13px; }
+    .app-switch span { font-size: 11px; color: var(--muted); }
+    .side-foot {
+      margin-top: auto; padding: 10px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .avatar { width: 32px; height: 32px; border-radius: 999px; background: #0a1628; color: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+    .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .topbar {
+      height: 48px; border-bottom: 1px solid rgba(0,0,0,.04);
+      display: flex; align-items: center; gap: 10px; padding: 0 24px; color: #334155; font-size: 14px; font-weight: 600;
+    }
+    .page { padding: 24px 28px; overflow: hidden; }
+    h1 { margin: 0; font-size: 22px; letter-spacing: -.03em; }
+    .sub { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .card {
+      border: 1px solid var(--border); border-radius: 12px; background: #fff;
+      box-shadow: var(--card-shade);
+      background-image: linear-gradient(180deg, rgba(255,255,255,0) 32%, rgba(99,91,255,.028) 100%);
+    }
+    .stat { padding: 16px 18px; }
+    .stat .k { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .stat .v { margin-top: 8px; font-size: 26px; font-weight: 650; letter-spacing: -.03em; }
+    .stat .s { margin-top: 6px; font-size: 12px; color: var(--muted); }
+    .card-h { padding: 14px 16px 0; display: flex; justify-content: space-between; align-items: baseline; }
+    .card-h b { font-size: 13px; }
+    .card-h span { font-size: 12px; color: var(--muted); }
+    .bar-row { padding: 8px 16px; }
+    .bar-row .meta { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+    .bar { height: 6px; background: #f1f5f9; border-radius: 99px; overflow: hidden; }
+    .bar i { display: block; height: 100%; background: rgba(99,91,255,.6); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; font-size: 11px; font-weight: 600; color: var(--muted); padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    td { padding: 11px 14px; border-bottom: 1px solid rgba(226,232,240,.7); vertical-align: top; }
+    tr:last-child td { border-bottom: 0; }
+    .pill {
+      display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 6px;
+      font-size: 11px; font-weight: 600; white-space: nowrap;
+    }
+    .ok { background: var(--success-bg); color: var(--success); }
+    .warn { background: var(--warn-bg); color: var(--warn); }
+    .bad { background: var(--danger-bg); color: var(--danger); }
+    .info { background: var(--info-bg); color: #4338ca; }
+    .ghost { background: #f8fafc; color: #475569; border: 1px solid var(--border); }
+    .live { background: var(--success-bg); color: var(--success); }
+    .filters { display: flex; gap: 8px; margin: 16px 0; }
+    .filters span {
+      padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; color: #475569; background: #f8fafc; border: 1px solid var(--border);
+    }
+    .filters span.on { background: #0a1628; color: #fff; border-color: #0a1628; }
+    .id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+    .muted { color: var(--muted); }
+    .tiny { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+    .row-icon {
+      width: 32px; height: 32px; border-radius: 8px; background: #f1f5f9;
+      display: grid; place-items: center; color: #475569; flex-shrink: 0;
+    }
+    .flex { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      height: 32px; padding: 0 12px; border-radius: 8px; border: 0; background: var(--primary); color: #fff;
+      font-size: 13px; font-weight: 600;
+    }
+    .btn-ghost { background: #fff; color: var(--fg); border: 1px solid var(--border); }
+    .sheet-wrap { position: relative; }
+    .sheet {
+      position: absolute; top: 0; right: 0; bottom: 0; width: 420px;
+      background: #fff; border-left: 1px solid var(--border);
+      box-shadow: -16px 0 40px rgba(15,23,42,.08); padding: 22px 22px 16px; overflow: hidden;
+    }
+    .sheet h2 { margin: 0; font-size: 28px; letter-spacing: -.03em; }
+    .kv { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; font-size: 13px; border-bottom: 1px solid #f1f5f9; }
+    .kv b { font-weight: 500; }
+    .section { margin-top: 16px; }
+    .section h3 { margin: 0 0 8px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .dim { opacity: .55; pointer-events: none; }
+    .toggle { width: 36px; height: 20px; border-radius: 99px; background: var(--primary); position: relative; }
+    .toggle i { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: #fff; border-radius: 99px; }
+    .checkout { display: flex; width: 1440px; height: 900px; }
+    .co-left {
+      width: 38%; color: #cbd5e1; padding: 40px 48px; display: flex; flex-direction: column;
+      background: linear-gradient(175deg, #0f172a 0%, #0a1628 38%, #050a14 100%);
+      position: relative;
+    }
+    .co-left::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 10% 0%, rgba(59,130,246,.14), transparent 55%);
+    }
+    .co-left > * { position: relative; }
+    .co-brand { display: flex; align-items: center; gap: 10px; color: #f1f5f9; font-weight: 600; font-size: 18px; }
+    .co-mark { width: 32px; height: 32px; border-radius: 8px; background: rgba(59,130,246,.15); border: 1px solid rgba(96,165,250,.25); display: grid; place-items: center; color: #93c5fd; font-weight: 700; }
+    .co-kicker { margin-top: 48px; color: #94a3b8; font-size: 14px; }
+    .co-title { margin: 8px 0 0; color: #f8fafc; font-size: 28px; letter-spacing: -.02em; }
+    .co-price { margin-top: 28px; color: #fff; font-size: 48px; font-weight: 800; letter-spacing: -.03em; }
+    .co-cur { font-size: 18px; font-weight: 500; color: #64748b; }
+    .co-card { margin-top: 28px; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04); padding: 14px 16px; }
+    .co-line { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+    .co-trust { margin-top: auto; display: flex; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(148,163,184,.14); background: rgba(15,23,42,.55); }
+    .co-right { flex: 1; background: #f8fafc; display: flex; align-items: center; justify-content: center; }
+    .pay-card { width: 480px; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px; box-shadow: var(--card-shade); }
+    .wallets { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+    .wallets div { border: 1px solid var(--border); border-radius: 10px; padding: 12px; font-size: 13px; font-weight: 600; text-align: center; }
+    .primary-cta { margin-top: 18px; height: 44px; border-radius: 10px; background: var(--primary); color: #fff; display: grid; place-items: center; font-weight: 650; }
+    .mail { width: 1440px; height: 900px; background: #eef2f7; display: flex; align-items: center; justify-content: center; }
+    .mail-card { width: 640px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 18px 50px rgba(15,23,42,.12); }
+    .mail-top { padding: 22px 28px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .mail-body { padding: 28px; }
+    .chain { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid #f1f5f9; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const scene = new URLSearchParams(location.search).get("scene") || "overview";
+    const logo = `
+      <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nr" x1="20" y1="20" x2="300" y2="300">
+            <stop offset="0" stop-color="#635bff"/>
+            <stop offset="1" stop-color="#16a34a"/>
+          </linearGradient>
+        </defs>
+        <rect x="24" y="24" width="272" height="272" rx="64" fill="url(#nr)"/>
+        <rect x="72" y="84" width="176" height="26" rx="13" fill="#fff" opacity=".92"/>
+        <rect x="72" y="146" width="176" height="26" rx="13" fill="#fff" opacity=".92"/>
+        <rect x="72" y="208" width="176" height="26" rx="13" fill="#fff" opacity=".92"/>
+        <circle cx="100" cy="97" r="7" fill="#0a1628"/>
+        <circle cx="156" cy="97" r="7" fill="#0a1628"/>
+        <circle cx="212" cy="97" r="7" fill="#0a1628"/>
+        <circle cx="100" cy="159" r="7" fill="#0a1628"/>
+        <circle cx="156" cy="159" r="7" fill="#0a1628"/>
+        <circle cx="212" cy="159" r="7" fill="#0a1628"/>
+        <circle cx="100" cy="221" r="7" fill="#0a1628"/>
+        <circle cx="156" cy="221" r="7" fill="#0a1628"/>
+        <circle cx="212" cy="221" r="7" fill="#0a1628"/>
+      </svg>`;
+
+    const payments = [
+      ["6b69dca2","INV-2400","28500","Acme Robotics","ap@acmerobotics.com","28471.50","USDC","Ethereum","Payment Link","SETTLED","Sep 6, 3:25 PM"],
+      ["9a2c9871","INV-2401","24900","Northwind Labs","finance@northwindlabs.io","24875.10","USDC","Base","Checkout","SETTLED","Sep 6, 2:47 PM"],
+      ["c2df65f8","INV-2402","18600","Helios Commerce","pay@helios.store","18581.40","USDC","Arbitrum","Invoice","SETTLED","Sep 6, 2:09 PM"],
+      ["ad7ecc27","INV-2403","15000","Lumen Studio","hello@lumen.studio","14985.00","USDC","Ethereum","API","SETTLED","Sep 6, 1:31 PM"],
+      ["80b04da8","INV-2404","12500","Orbit Freight","billing@orbitfreight.com","12487.50","USDC","Base","Subscription","SETTLED","Sep 6, 12:53 PM"],
+      ["c303f36f","INV-2405","9800","Vertex Markets","ops@vertexmarkets.com","9790.20","USDC","Solana","Payment Link","SETTLED","Sep 6, 12:15 PM"],
+      ["6a37132d","INV-2406","8900","Sable Media","accounts@sable.media","8891.10","USDC","Ethereum","Invoice","CAPTURED","Sep 6, 11:37 AM"],
+      ["e1bffa11","INV-2407","7200","Pine Analytics","cfo@pineanalytics.com","7192.80","USDC","Base","Checkout","CAPTURED","Sep 6, 10:59 AM"],
+      ["caebdf91","INV-2408","6400","Harbor Pay","treasury@harborpay.co","6393.60","USDC","Arbitrum","API","CAPTURED","Sep 6, 10:21 AM"],
+      ["b3b105e3","INV-2409","4990","Nimbus AI","founders@nimbus.ai","4985.01","USDC","Solana","Subscription","CAPTURED","Sep 6, 9:43 AM"],
+      ["4d8e21aa","INV-2410","3600","Copper Ledger","ap@copperledger.com","3596.40","USDC","Ethereum","Payment Link","AUTHORIZED","Sep 6, 9:05 AM"],
+      ["21aa90c1","INV-2411","2800","Atlas Guild","team@atlasguild.xyz","2797.20","USDC","Base","Checkout","CREATED","Sep 6, 8:27 AM"],
+      ["88c11d02","INV-2412","2400","Acme Robotics","ap@acmerobotics.com","2397.60","USDC","Arbitrum","Invoice","REFUNDED","Sep 6, 7:49 AM"],
+      ["19bb4408","INV-2413","1840","Northwind Labs","finance@northwindlabs.io","1838.16","USDC","Ethereum","API","PARTIALLY_REFUNDED","Sep 6, 7:11 AM"],
+    ];
+
+    const statusCls = {
+      SETTLED: "ok", CAPTURED: "ok", AUTHORIZED: "info", CREATED: "ghost",
+      REFUNDED: "bad", PARTIALLY_REFUNDED: "warn", ACTIVE: "ok", PAST_DUE: "bad",
+      PAID: "ok", OPEN: "warn",
+    };
+    const statusLabel = {
+      SETTLED: "Settled", CAPTURED: "Captured", AUTHORIZED: "Authorized", CREATED: "Created",
+      REFUNDED: "Refunded", PARTIALLY_REFUNDED: "Partially refunded", ACTIVE: "Active",
+      PAST_DUE: "Past due", PAID: "Paid", OPEN: "Open",
+    };
+    const money = (n) => `$${Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    const badge = (s) => `<span class="pill ${statusCls[s] || "ghost"}">${statusLabel[s] || s}</span>`;
+
+    const nav = (active) => `
+      <div class="nav-label">Platform</div>
+      <a${active === "platform" ? ' class="active"' : ""}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</a>
+      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Apps</a>
+      <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/></svg>Bank</a>
+      <a${active === "tax" ? ' class="active"' : ""}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>Settings</a>
+      <div class="app-switch"><div><strong>Cursor</strong><span>Production app</span></div><span class="pill live">Live</span></div>
+      <div class="nav-label">App</div>
+      ${[
+        ["overview","Overview"],["payments","Payments"],["payouts","Payouts"],["subscriptions","Subscriptions"],
+        ["invoices","Invoices"],["links","Payment Links"],["customers","Customers"],["plans","Product Plans"],
+        ["checkout","Checkout"],["disputes","Disputes"],["settings","Settings"],
+      ].map(([k,l]) => `<a${active===k?' class="active"':""}>${l}</a>`).join("")}`;
+
+    const shell = (title, active, inner, extra = "") => `
+      <div class="dash">
+        <aside class="sidebar">
+          <div class="brand">${logo}<div><b>NodeRails</b><small>Crypto Payment Infrastructure</small></div></div>
+          <div class="nav">${nav(active)}</div>
+          <div class="side-foot"><div class="avatar">CU</div><div><b style="font-size:13px">Cursor</b><div class="tiny">merchant@noderails.com</div></div></div>
+        </aside>
+        <section class="main">
+          <div class="topbar">${title}</div>
+          <div class="page sheet-wrap">${inner}${extra}</div>
+        </section>
+      </div>`;
+
+    const paymentRows = payments.slice(0, 12).map((p) => `
+      <tr>
+        <td><div class="flex"><div class="row-icon">▭</div><div><div class="id">${p[0]}</div><div class="tiny">${p[1]}</div></div></div></td>
+        <td><b>${money(p[2])}</b> <span class="muted">USD</span></td>
+        <td>${p[3]}<div class="tiny">${p[4]}</div></td>
+        <td><b>${Number(p[5]).toLocaleString()}</b> <span class="muted">${p[6]}</span></td>
+        <td>${p[7]}</td>
+        <td>${p[8]}</td>
+        <td>${badge(p[9])}</td>
+        <td class="id">${p[0].slice(0,4)}...${p[0].slice(-4)}</td>
+        <td class="muted">${p[10]}</td>
+      </tr>`).join("");
+
+    const scenes = {
+      overview: shell("App", "overview", `
+        <div class="flex" style="justify-content:space-between">
+          <div>
+            <div class="flex"><h1>Cursor</h1><span class="pill live">Production</span></div>
+            <p class="sub">App ID: <span class="id">2f07b892-3527-4ab4-91b5</span> · Created August 12, 2026</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          ${[["Total Payments","91","48 captured · 36 settled"],["Captured Volume","$429,443.00","$312,180.00 settled"],["Active Subscriptions","11","12 total"],["Paid Invoices","9","12 total"]].map(([k,v,s]) => `<div class="card stat"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s}</div></div>`).join("")}
+        </div>
+        <div class="grid-4">
+          ${[["Settled Volume","$312,180.00",""],["Refunded","5",""],["Disputes","0","0 total"],["MRR","$1,089.00","ARR $13,068.00"]].map(([k,v,s]) => `<div class="card stat"><div class="k">${k}</div><div class="v">${v}</div>${s?`<div class="s">${s}</div>`:""}</div>`).join("")}
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-h"><div><b>Payments by Network</b><div class="tiny">Volume per chain</div></div></div>
+            ${[["Ethereum","34","$186,420.00","92%"],["Base","27","$128,640.00","73%"],["Arbitrum","18","$72,190.00","49%"],["Solana","12","$42,193.00","32%"]].map(([n,c,v,w]) => `<div class="bar-row"><div class="meta"><span>${n}</span><span class="muted">${c} payments · <b style="color:#0a1628">${v}</b></span></div><div class="bar"><i style="width:${w}"></i></div></div>`).join("")}
+            <div style="height:10px"></div>
+          </div>
+          <div class="card">
+            <div class="card-h"><div><b>Recent Payments</b><div class="tiny">Latest payment activity</div></div><span>View all</span></div>
+            <table>
+              ${payments.slice(0,6).map((p) => `<tr><td><b>${money(p[2])}</b></td><td>${p[3]}</td><td>${p[7]}</td><td>${badge(p[9])}</td></tr>`).join("")}
+            </table>
+          </div>
+        </div>
+      `),
+
+      payments: shell("Payments", "payments", `
+        <h1>Payments</h1>
+        <p class="sub">Payment intents for this app (91)</p>
+        <div class="filters"><span class="on">All</span><span>Captured</span><span>Settled</span><span>Refunded</span><span>Authorized</span></div>
+        <div class="card" style="overflow:hidden">
+          <table>
+            <thead><tr><th>Payment</th><th>Amount</th><th>Customer</th><th>Crypto</th><th>Network</th><th>Source</th><th>Status</th><th>Capture Tx</th><th>Created</th></tr></thead>
+            <tbody>${paymentRows}</tbody>
+          </table>
+        </div>
+      `),
+
+      "payment-details": shell("Payments", "payments", `
+        <div class="dim">
+          <h1>Payments</h1>
+          <p class="sub">Payment intents for this app (91)</p>
+          <div class="card" style="overflow:hidden;margin-top:16px">
+            <table><thead><tr><th>Payment</th><th>Amount</th><th>Customer</th><th>Status</th></tr></thead>
+            <tbody>${payments.slice(0,8).map((p)=>`<tr><td class="id">${p[0]}</td><td>${money(p[2])}</td><td>${p[3]}</td><td>${badge(p[9])}</td></tr>`).join("")}</tbody></table>
+          </div>
+        </div>
+      `, `
+        <aside class="sheet">
+          <div class="muted" style="font-size:12px">Payment · INV-2400</div>
+          <div class="flex" style="margin-top:8px;justify-content:space-between">
+            <h2>$28,500.00</h2>${badge("SETTLED")}
+          </div>
+          <p class="sub">28,471.50 USDC on Ethereum</p>
+          <div class="section">
+            <h3>Customer</h3>
+            <div><b>Acme Robotics</b><div class="tiny">ap@acmerobotics.com · San Francisco, US</div></div>
+          </div>
+          <div class="section">
+            <h3>Fee breakdown</h3>
+            <div class="kv"><span>Amount</span><b>$28,500.00</b></div>
+            <div class="kv"><span>Platform fee (1.00%)</span><b>$285.00</b></div>
+            <div class="kv"><span>Settlement</span><b>$28,215.00</b></div>
+          </div>
+          <div class="section">
+            <h3>On-chain</h3>
+            <div class="kv"><span>Wallet</span><b class="id">0xa1b2...f607</b></div>
+            <div class="kv"><span>Capture tx</span><b class="id">0xc0ff...ee12</b></div>
+            <div class="kv"><span>Network</span><b>Ethereum</b></div>
+          </div>
+          <div class="section">
+            <h3>Timeline</h3>
+            <div class="kv"><span>Created</span><b>Sep 6, 3:25 PM</b></div>
+            <div class="kv"><span>Captured</span><b>Sep 6, 3:45 PM</b></div>
+            <div class="kv"><span>Settled</span><b>Sep 9, 3:25 PM</b></div>
+          </div>
+        </aside>
+      `),
+
+      customers: shell("Customers", "customers", `
+        <div class="flex" style="justify-content:space-between"><div><h1>Customers</h1><p class="sub">Manage customer accounts (12)</p></div><button class="btn">Add Customer</button></div>
+        <div class="card" style="margin-top:16px;overflow:hidden">
+          <table>
+            <thead><tr><th>Customer</th><th>Email</th><th>Location</th><th>Payments</th><th>Volume</th></tr></thead>
+            <tbody>
+              ${[
+                ["Acme Robotics","ap@acmerobotics.com","San Francisco, US","11","$84,220"],
+                ["Northwind Labs","finance@northwindlabs.io","Austin, US","9","$61,480"],
+                ["Helios Commerce","pay@helios.store","Berlin, DE","8","$49,310"],
+                ["Lumen Studio","hello@lumen.studio","London, GB","8","$38,900"],
+                ["Orbit Freight","billing@orbitfreight.com","Singapore, SG","7","$36,140"],
+                ["Vertex Markets","ops@vertexmarkets.com","New York, US","7","$29,870"],
+                ["Sable Media","accounts@sable.media","Toronto, CA","6","$24,610"],
+                ["Pine Analytics","cfo@pineanalytics.com","Chicago, US","6","$21,440"],
+                ["Harbor Pay","treasury@harborpay.co","Dublin, IE","5","$18,220"],
+                ["Nimbus AI","founders@nimbus.ai","Seoul, KR","5","$16,980"],
+              ].map((c)=>`<tr><td><b>${c[0]}</b></td><td class="muted">${c[1]}</td><td>${c[2]}</td><td>${c[3]}</td><td><b>${c[4]}</b></td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `, `
+        <aside class="sheet">
+          <h2 style="font-size:22px">Acme Robotics</h2>
+          <p class="sub">ap@acmerobotics.com</p>
+          <div class="section"><h3>Billing</h3>
+            <div class="kv"><span>Address</span><b>120 Market Street</b></div>
+            <div class="kv"><span>City</span><b>San Francisco, US</b></div>
+          </div>
+          <div class="section"><h3>Activity</h3>
+            <div class="kv"><span>Payments</span><b>11</b></div>
+            <div class="kv"><span>Volume</span><b>$84,220.00</b></div>
+            <div class="kv"><span>Last payment</span><b>$28,500.00</b></div>
+          </div>
+        </aside>
+      `),
+
+      "payment-links": shell("Payment Links", "links", `
+        <div class="flex" style="justify-content:space-between"><div><h1>Payment Links</h1><p class="sub">Shareable checkout URLs</p></div><button class="btn">Create link</button></div>
+        <div class="card" style="margin-top:16px;overflow:hidden">
+          <table>
+            <thead><tr><th>Link</th><th>Amount</th><th>URL</th><th>Uses</th><th>Status</th></tr></thead>
+            <tbody>
+              ${[
+                ["Enterprise kickoff","15000","pay.noderails.com/link/enterprise-kickoff","7"],
+                ["Invoice retainer","4800","pay.noderails.com/link/invoice-retainer","19"],
+                ["Onboarding deposit","2500","pay.noderails.com/link/onboarding-deposit","41"],
+                ["Pro annual","990","pay.noderails.com/link/pro-annual","86"],
+                ["Usage top-up","249","pay.noderails.com/link/usage-topup","128"],
+                ["WallCard demo","49","pay.noderails.com/link/wallcard-demo","214"],
+              ].map((l)=>`<tr><td><b>${l[0]}</b></td><td>${money(l[1])}</td><td class="id">${l[2]}</td><td>${l[3]}</td><td>${badge("ACTIVE")}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `),
+
+      subscriptions: shell("Subscriptions", "subscriptions", `
+        <div class="flex" style="justify-content:space-between"><div><h1>Subscriptions</h1><p class="sub">12 subscribers on NodeRails Pro</p></div><button class="btn">New subscription</button></div>
+        <div class="card" style="margin-top:16px;overflow:hidden">
+          <table>
+            <thead><tr><th>Customer</th><th>Plan</th><th>Amount</th><th>Status</th><th>Period</th></tr></thead>
+            <tbody>
+              ${[
+                ["Acme Robotics","ACTIVE"],["Northwind Labs","ACTIVE"],["Helios Commerce","ACTIVE"],
+                ["Lumen Studio","ACTIVE"],["Orbit Freight","ACTIVE"],["Vertex Markets","ACTIVE"],
+                ["Sable Media","ACTIVE"],["Pine Analytics","PAST_DUE"],["Harbor Pay","ACTIVE"],
+                ["Nimbus AI","ACTIVE"],["Copper Ledger","ACTIVE"],["Atlas Guild","ACTIVE"],
+              ].map((s)=>`<tr><td><b>${s[0]}</b></td><td>NodeRails Pro</td><td>${money(99)} / month</td><td>${badge(s[1])}</td><td class="muted">Sep 6 – Oct 6, 2026</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `),
+
+      "subscription-details": shell("Subscriptions", "subscriptions", `
+        <div class="dim"><h1>Subscriptions</h1><p class="sub">12 subscribers on NodeRails Pro</p></div>
+      `, `
+        <aside class="sheet">
+          <div class="muted" style="font-size:12px">Subscription</div>
+          <div class="flex" style="margin-top:8px;justify-content:space-between"><h2 style="font-size:22px">Acme Robotics</h2>${badge("ACTIVE")}</div>
+          <p class="sub">NodeRails Pro · $99.00 / month</p>
+          <div class="section"><h3>Billing</h3>
+            <div class="kv"><span>Current period</span><b>Sep 6 – Oct 6, 2026</b></div>
+            <div class="kv"><span>Next charge</span><b>$99.00 USDC</b></div>
+            <div class="kv"><span>Network</span><b>Base</b></div>
+          </div>
+          <div class="section"><h3>Authorization</h3>
+            <div class="kv"><span>Wallet</span><b class="id">0xa1b2...f607</b></div>
+            <div class="kv"><span>Allowance</span><b>Open</b></div>
+          </div>
+        </aside>
+      `),
+
+      "product-plans": shell("Product Plans", "plans", `
+        <div class="flex" style="justify-content:space-between"><div><h1>Product Plans</h1><p class="sub">Pricing used by checkout, links, and subscriptions</p></div><button class="btn">Create plan</button></div>
+        <div class="card" style="margin-top:16px;overflow:hidden">
+          <table>
+            <thead><tr><th>Plan</th><th>Type</th><th>Prices</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><b>NodeRails Pro</b><div class="tiny">Hosted checkout, payouts, and settlement</div></td><td>Subscription</td><td>$99.00 / month · $990.00 / year</td><td>${badge("ACTIVE")}</td></tr>
+              <tr><td><b>Starter</b><div class="tiny">Single-app payments</div></td><td>Subscription</td><td>$29.00 / month</td><td>${badge("ACTIVE")}</td></tr>
+              <tr><td><b>Enterprise kickoff</b><div class="tiny">Implementation and go-live</div></td><td>One-time</td><td>$15,000.00</td><td>${badge("ACTIVE")}</td></tr>
+              <tr><td><b>Usage top-up</b><div class="tiny">Prepaid settlement credits</div></td><td>One-time</td><td>$249.00</td><td>${badge("ACTIVE")}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      `),
+
+      "app-settings": shell("App Settings", "settings", `
+        <h1>App Settings</h1>
+        <p class="sub">Chains and tokens Cursor accepts</p>
+        <div class="filters"><span class="on">Chains</span><span>Wallets</span><span>Settlement</span><span>API Keys</span><span>Webhooks</span></div>
+        <div class="card">
+          ${[["Ethereum","8453 replaced","1"],["Base","8453","1"],["Arbitrum","42161","1"],["Solana","101","1"],["Polygon","137","1"]].map(([n,id], i, arr) => {
+            const ids = ["1","8453","42161","101","137"];
+            return `<div class="chain"><div><b>${n}</b><div class="tiny">Chain ID ${ids[i]}</div></div><div class="toggle"><i></i></div></div>`;
+          }).join("")}
+        </div>
+        <div class="card" style="margin-top:14px;padding:8px 0">
+          <div class="card-h"><b>Tokens</b><span>Enabled for checkout</span></div>
+          ${[["USDC","USD Coin"],["USDT","Tether"],["ETH","Ether"]].map((t)=>`<div class="chain"><div><b>${t[0]}</b><div class="tiny">${t[1]}</div></div><div class="toggle"><i></i></div></div>`).join("")}
+        </div>
+      `),
+
+      "tax-rates": shell("Tax rates", "tax", `
+        <div class="flex" style="justify-content:space-between"><div><h1>Tax rates</h1><p class="sub">Applied on invoices and checkout</p></div><button class="btn">Add rate</button></div>
+        <div class="card" style="margin-top:16px;overflow:hidden">
+          <table>
+            <thead><tr><th>Name</th><th>Rate</th><th>Jurisdiction</th><th>Inclusive</th><th>Status</th></tr></thead>
+            <tbody>
+              ${[
+                ["US sales tax","8.00%","United States","No"],
+                ["Germany VAT","19.00%","Germany","Yes"],
+                ["UK VAT","20.00%","United Kingdom","Yes"],
+                ["Canada GST","5.00%","Canada","No"],
+                ["Ireland VAT","23.00%","Ireland","Yes"],
+              ].map((t)=>`<tr><td><b>${t[0]}</b></td><td>${t[1]}</td><td>${t[2]}</td><td>${t[3]}</td><td>${badge("ACTIVE")}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `),
+
+      checkout: `
+        <div class="checkout">
+          <aside class="co-left">
+            <div class="co-brand"><div class="co-mark">C</div>Cursor</div>
+            <div class="co-kicker">Pay for</div>
+            <h1 class="co-title">Enterprise kickoff</h1>
+            <div class="co-price">$15,000.00 <span class="co-cur">USD</span></div>
+            <div class="co-card">
+              <div class="co-line"><span>Subtotal</span><b style="color:#fff">$15,000.00</b></div>
+              <div class="co-line"><span>Tax</span><span>$0.00</span></div>
+              <div class="co-line"><span>Total</span><b style="color:#fff">$15,000.00</b></div>
+            </div>
+            <div class="co-trust">${logo.replace('id="nr"','id="nr2"')}<div><div style="color:#f1f5f9;font-weight:600">Secured by NodeRails</div><div style="color:#94a3b8;font-size:13px">Encrypted checkout. Funds settle to the merchant wallet.</div></div></div>
+          </aside>
+          <section class="co-right">
+            <div class="pay-card">
+              <div class="muted" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5">Amount to send</div>
+              <div style="margin-top:10px;font-size:36px;font-weight:750;letter-spacing:-.03em">15,000.00 <span style="font-size:20px">USDC</span></div>
+              <p class="sub">on Base</p>
+              <p style="margin:22px 0 8px;font-weight:650">Connect a wallet</p>
+              <div class="wallets"><div>MetaMask</div><div>Phantom</div><div>Rabby</div><div>WalletConnect</div></div>
+              <div class="primary-cta">Continue to authorize</div>
+              <p class="tiny" style="text-align:center;margin-top:12px">You will sign a permit. NodeRails never holds your keys.</p>
+            </div>
+          </section>
+        </div>
+      `,
+
+      "payment-transactions": shell("Payments", "payments", `
+        <div class="dim"><h1>Payments</h1><p class="sub">Payment intents for this app (91)</p></div>
+      `, `
+        <aside class="sheet">
+          <div class="muted" style="font-size:12px">Lifecycle</div>
+          <h2 style="font-size:22px;margin-top:8px">$15,000.00</h2>
+          <p class="sub">Lumen Studio · Ethereum</p>
+          <div class="section"><h3>Transactions</h3>
+            <div class="kv"><span>Authorize</span><b class="ok" style="padding:2px 6px;border-radius:6px">Confirmed</b></div>
+            <div class="tiny" style="margin:-4px 0 8px">0xab12...90ef · Sep 6, 1:32 PM</div>
+            <div class="kv"><span>Capture</span><b class="ok" style="padding:2px 6px;border-radius:6px">Confirmed</b></div>
+            <div class="tiny" style="margin:-4px 0 8px">0xc0ff...ee12 · Sep 6, 1:34 PM</div>
+            <div class="kv"><span>Settle</span><b class="ok" style="padding:2px 6px;border-radius:6px">Confirmed</b></div>
+            <div class="tiny" style="margin:-4px 0 8px">0x51e7...aa04 · Sep 9, 1:31 PM</div>
+          </div>
+          <div class="section"><h3>Escrow</h3>
+            <div class="kv"><span>Captured</span><b>15,000.00 USDC</b></div>
+            <div class="kv"><span>Settled to merchant</span><b>14,850.00 USDC</b></div>
+          </div>
+        </aside>
+      `),
+
+      "payment-receipt": `
+        <div class="mail">
+          <div class="mail-card">
+            <div class="mail-top">${logo}<div class="muted">receipt@noderails.com</div></div>
+            <div class="mail-body">
+              <div class="pill ok">Paid</div>
+              <h1 style="margin-top:12px">Payment received</h1>
+              <p class="sub">Cursor charged $15,000.00 USDC on Ethereum.</p>
+              <div class="card" style="margin-top:18px;padding:16px">
+                <div class="kv"><span>Amount</span><b>$15,000.00</b></div>
+                <div class="kv"><span>Network</span><b>Ethereum</b></div>
+                <div class="kv"><span>Payment</span><b class="id">ad7ecc27</b></div>
+                <div class="kv"><span>Customer</span><b>Lumen Studio</b></div>
+              </div>
+              <div class="primary-cta" style="width:220px">View receipt</div>
+              <p class="tiny" style="margin-top:16px">Need a refund? Open a dispute from this receipt. Escrow holds funds until the settlement window closes.</p>
+            </div>
+          </div>
+        </div>
+      `,
+
+      "invoice-email": `
+        <div class="mail">
+          <div class="mail-card">
+            <div class="mail-top"><div><b>Invoice MKT-2026005</b><div class="tiny">From Cursor · due Sep 11, 2026</div></div>${badge("PAID")}</div>
+            <div class="mail-body">
+              <p class="muted">Billed to</p>
+              <h1 style="font-size:22px">Orbit Freight</h1>
+              <p class="sub">billing@orbitfreight.com</p>
+              <div class="card" style="margin-top:18px;overflow:hidden">
+                <table>
+                  <thead><tr><th>Item</th><th>Qty</th><th>Amount</th></tr></thead>
+                  <tbody>
+                    <tr><td>NodeRails settlement usage</td><td>1</td><td>${money(4990)}</td></tr>
+                    <tr><td>Tax (8%)</td><td></td><td>${money(399)}</td></tr>
+                    <tr><td><b>Total</b></td><td></td><td><b>${money(5389)}</b></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="primary-cta" style="width:220px;margin-top:20px">View invoice</div>
+              <p class="tiny" style="margin-top:14px">pay.noderails.com/invoices/MKT-2026005</p>
+            </div>
+          </div>
+        </div>
+      `,
+    };
+
+    document.getElementById("root").innerHTML = scenes[scene] || scenes.overview;
+  </script>
+</body>
+</html>
