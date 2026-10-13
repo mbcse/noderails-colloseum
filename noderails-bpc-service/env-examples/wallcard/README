@@ -1,0 +1,27 @@
+WallCard (noderailsCardNetwork) environment templates — reference copies for local + production setup.
+
+Source of truth: noderailsCardNetwork repo. Sync these when WallCard env vars change.
+
+Never commit real `.env` files with secrets.
+
+  .env.local.example              → WallCard repo-root `.env` (local dev)
+  .env.production.api.example     → API EC2 (docker-compose.api.yml)
+  .env.production.signer.example  → Signer EC2 (docker-compose.signer.yml)
+  .env.production.frontend.example → Vercel + EAS production (build-time)
+  .env.preview.frontend.example   → EAS preview profile (internal QA)
+  .env.integration.example        → BPC ↔ WallCard vars only (append to WallCard `.env`)
+
+Copy to WallCard repo:
+
+  cd ../noderailsCardNetwork
+  cp ../noderails-bpc-service/env-examples/wallcard/.env.local.example .env
+
+Port matrix (run side-by-side):
+
+  BPC API          http://localhost:8090   (this repo — PORT in .env.example)
+  WallCard API     http://localhost:9080
+  WallCard signer  http://localhost:9081
+  WallCard mobile  http://localhost:8090  ← conflicts with BPC; use EXPO_WEB_PORT=8091 or stop BPC
+  BPC admin        http://localhost:3010
+
+WallCard → BPC balance/price integration: see .env.integration.example and docs/INTEGRATION.md.

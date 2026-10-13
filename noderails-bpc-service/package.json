@@ -1,0 +1,35 @@
+{
+  "name": "noderails-bpc-service",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/with-env.sh pnpm --parallel -r dev",
+    "dev:server": "bash scripts/with-env.sh pnpm --filter @bpc/server dev",
+    "dev:admin": "bash scripts/with-env.sh pnpm --filter @bpc/admin dev",
+    "db:generate": "bash scripts/with-env.sh pnpm --filter @bpc/server exec prisma generate",
+    "db:migrate": "bash scripts/with-env.sh sh -c 'PRISMA_SCHEMA_DISABLE_ADVISORY_LOCK=1 pnpm --filter @bpc/server exec prisma migrate dev'",
+    "db:migrate:deploy": "bash scripts/with-env.sh sh -c 'PRISMA_SCHEMA_DISABLE_ADVISORY_LOCK=1 pnpm --filter @bpc/server exec prisma migrate deploy'",
+    "db:seed": "bash scripts/with-env.sh pnpm --filter @bpc/server db:seed",
+    "prestart:local": "pnpm db:generate && pnpm db:migrate:deploy",
+    "start:local": "bash scripts/with-env.sh pnpm --parallel -r dev",
+    "start:local:seed": "pnpm db:seed && pnpm start:local",
+    "build": "pnpm -r build",
+    "test": "pnpm --filter @bpc/server test",
+    "test:api": "node scripts/test-api.mjs",
+    "test:api:local": "BPC_URL=http://localhost:8090 node scripts/test-api.mjs",
+    "test:balance": "node scripts/test-balance.mjs",
+    "test:balance:local": "BPC_URL=http://localhost:8090 node scripts/test-balance.mjs",
+    "docker:infra": "docker compose -f docker-compose.infra.yml up -d",
+    "docker:infra:down": "docker compose -f docker-compose.infra.yml down",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f bpc-server"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0"
+  }
+}

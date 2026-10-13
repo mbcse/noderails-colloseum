@@ -1,0 +1,1 @@
+Bundled chainlist-rpcs.json is omitted from this tree. BPC seed loads https://chainlist.org/rpcs.json at runtime; set LEANRPC_API_KEY and INFURA_API_KEY in the environment.
